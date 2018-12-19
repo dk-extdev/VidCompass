@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Instagram Prospector</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../css/popup.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<!--div class="search-background">
+		<img src="https://lh4.googleusercontent.com/-T4pmKmAS5D4/U0uihfPzEZI/AAAAAAAAA2c/sN0mjJS2bx4/w957-h374-no/141.jpg">
+	</div-->
+	<div class="well-searchbox">
+		<form class="form-horizontal" data-toggle="validator" role="form">
+				<div class="form-group text-center">
+						<h1>Instagram Prospector</h1>
+				</div>
+				<div class="form-group">
+						<label class="col-md-4 control-label">Keyword</label>
+						<div class="col-md-4">
+								<input type="text" id="keyword" class="form-control" required placeholder="Keyword">
+						</div>
+				</div>
+
+				<div class="form-group">
+						<label class="col-md-4 control-label">Followers</label>
+						<div class="col-md-4">
+								<select id="followers_filter" class="form-control" placeholder="Followers">
+										<option value="0">All</option>
+										<option value="1">0~100K</option>
+										<option value="2">100K-500K</option>
+										<option value="3">500K-2M</option>
+										<option value="4">2M-10M</option>
+								</select>
+						</div>
+				</div>
+				<div class="form-group email-area" style="display:none;">
+						<label class="col-md-4 control-label" for="comment">Email Template</label>
+						<div class="col-md-4">
+								<textarea class="form-control" rows="5"  id="emailtmp"></textarea>
+						</div>
+				</div>
+				<div class="form-group form-check">
+					<div class="col-md-4">
+					</div>
+				  <label class="form-check-label col-md-4 text-left control-label">
+				    <input class="form-check-input" id="only-email" type="checkbox" value="">
+				    Download only has email.
+				  </label>
+				</div>
+				
+				<div class="text-center">
+					<button id="btn_search" type="button" data-loading-text="Searching..." class="btn btn-success">Start Search</button>
+					<button id="btn_csv" type="button" data-loading-text="Downloading..." class="btn btn-success">Download CSV</button>
+					<button id="btn_emailtmp" type="button" class="btn btn-success">Email Template</button>
+					<button id="btn_emailto" type="button" class="btn btn-success">Email To</button>
+					<!--button id="btn_open" type="button" data-loading-text="Openning..." class="btn btn-success">Open WebSite</button-->
+				</div>
+		</form>
+		<div class="container">
+		  <div class="row">
+		      <div class="panel panel-default">
+		        <div class="panel-heading">
+		          <h4>
+		            Results Found 
+		          </h4>
+		        </div>
+		        <table id="tbl_results" class="table table-fixed">
+		          <thead>
+		            <tr>
+		              <th class="w-1"></th><th class="w-1">Profile Image</th><th class="w-1">UserName</th><th class="w-3">Description</th><th class="w-1 follow-head" id="follow-head">Followers</th><th class="w-1">Email</th><th class="w-1">WebSite</th><th class="w-1">Avg Likes</th><th class="w-1">Avg Comments</th><th class="w-1">Potential Clicks</th>
+		            </tr>
+		          </thead>
+		          <tbody>
+		            
+		          </tbody>
+		        </table>
+		      </div>
+		  </div>
+		</div>
+	</div>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/sorttable.js"></script>
+		<script src="../js/popup.js"></script>
+</body>
+</html>
