@@ -202,7 +202,6 @@ jQuery(document).ready(function () {
 	  });
 	}
 	function getVideos(yttoken,pagetoken) {
-		console.log(gapi.client.youtube.search);
 		if(pagetoken==''){
 			request = gapi.client.youtube.search.list({
 	  		maxResults: '50',
