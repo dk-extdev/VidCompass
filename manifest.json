@@ -28,7 +28,7 @@
     "default_title": "Youtube Translator"
   },
   "oauth2": {
-    "client_id": "308444720330-4gd8183f4frb72p7b47oglu6tmuq2fsa.apps.googleusercontent.com",
+    "client_id": "106110541722-2j8cif3frp2p79g44abhg9u9m2eidul5.apps.googleusercontent.com",
     "scopes": ["https://www.googleapis.com/auth/userinfo.profile","https://www.googleapis.com/auth/youtube.force-ssl", "https://www.googleapis.com/auth/youtubepartner","https://www.googleapis.com/auth/youtube","https://www.googleapis.com/auth/youtube.upload","https://www.googleapis.com/auth/youtubepartner-channel-audit"]
   },
   "background": {

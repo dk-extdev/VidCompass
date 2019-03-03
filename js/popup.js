@@ -3,8 +3,9 @@ function nl2br (str, is_xhtml) {
     var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
     return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
 }
-var apiKey = "AIzaSyAY2aPVgdkg6rA5bbZub1GjSXOZAvswTLk";
-//var apiKey = "AIzaSyAFsgdyXYzhbihr4Yy1UqVSige_enaZXJ8";
+var apiKey = "AIzaSyD3cpLN1S91nxdTkHORQDQICWF0mbnOPSw";
+//var apiKey = "AIzaSyAumB5NxVWq8fqmRb8ODmxpWMDxsNXWO5I";
+
 
 function handleAPILoaded() {
 	  console.log('here');
@@ -141,13 +142,6 @@ function getLanguageNames() {
   return $.getJSON("https://api.myjson.com/bins/155kj1");
 }
 
-// On document ready
-$(function() {
-  
-
-  
-});
-
 jQuery(document).ready(function () {
 	var head = document.getElementsByTagName('head')[0];
 	var script = document.createElement('script');
@@ -208,14 +202,15 @@ jQuery(document).ready(function () {
 	  });
 	}
 	function getVideos(yttoken,pagetoken) {
+		console.log(gapi.client.youtube.search);
 		if(pagetoken==''){
 			request = gapi.client.youtube.search.list({
 	  		maxResults: '50',
 	  		forMine: 'true',
-				part: 'snippet',
-				type: 'video',
-				q: '',
-				access_token: yttoken
+			part: 'snippet',
+			type: 'video',
+			q: '',
+			access_token: yttoken
 		  });
 		}else{
 			request = gapi.client.youtube.search.list({
@@ -276,6 +271,7 @@ jQuery(document).ready(function () {
         	$('#signin').hide();
         	$('#logout').show();
         	$(".personal-info").append('<div style="display:inline;"><img style="width:40px; border-radius:50%; height:40px;" src="'+profileData.picture+'"></img><span style="font-size: 20px;font-weight: bold;margin-left: 10px;margin-right: 10px;">'+profileData.name+'</span></div');
+        	console.log(token);
         	setTimeout(function(){ getVideos(token,''); }, 2000);
         }
     };
@@ -399,22 +395,6 @@ jQuery(document).ready(function () {
 		}else{
 			alert("Please add a target language");
 		}
-    /*translationObjTitle = {
-      sourceLang: source_lan,
-      targetLang: $("#selectlanguage").val(),
-      textToTranslate: $("#originaltitle").val()
-    };
-    translationObjDescription = {
-      sourceLang: source_lan,
-      targetLang: $("#selectlanguage").val(),
-      textToTranslate: $("#originaldesc").val()
-    };
-    if (translationObjTitle.targetLang !== "") {
-      translate(translationObjTitle,"newtitle");
-      translate(translationObjDescription,"newdesc");
-    } else {
-      alert("Please select a target language");
-    }*/
   }).on("click", "button#detectVideo", function() {
     translationObj = {
       textToTranslate: $("#originaltitle").val()
@@ -425,8 +405,7 @@ jQuery(document).ready(function () {
   $(".nav-tabs").on("click", "a", function (e) {
       e.preventDefault();
       $(this).tab('show');
-  })
-  .on("click", "span", function () {
+  }).on("click", "span", function () {
       var anchor = $(this).siblings('a');
       $(anchor.attr('href')).remove();
       $(this).parent().remove();
@@ -436,9 +415,7 @@ jQuery(document).ready(function () {
       }else{
       	$("#translateVideo").hide();
       }
-      
   });
-
 	$('body').on('click','#addLanguage',function(e){
 	    e.preventDefault();
 	    if($("#selectlanguage").val()){
@@ -453,7 +430,6 @@ jQuery(document).ready(function () {
 		   $('.nav-tabs li:nth-child(' + (id+1) + ') a').click();	
 		   $("#translateVideo").show();
 	    }
-	    
 	});
 });
 
